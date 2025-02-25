@@ -9,13 +9,13 @@ export const login = async(req, res) => {
         
         const user = await Usuario.findOne({
             $or: [
-                {username}
+                {email}
             ]
         })
 
-        if(req.body.email){
+        if(req.body.username){
             return res.status(400).json({
-                msg: 'Solo puede inciar sesion mediante username'
+                msg: 'Solo puede inciar sesion mediante email'
             })
         }
 
