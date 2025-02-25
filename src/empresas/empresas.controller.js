@@ -10,6 +10,8 @@ export const saveEmpresa = async(req, res) => {
             clientes: clientes
         });
 
+        console.log(clientes)
+
         await empresa.save();
 
         console.log("hola")
