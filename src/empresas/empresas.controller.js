@@ -3,23 +3,21 @@ import Empresa from "./empresas.model.js";
 export const saveEmpresa = async(req, res) => {
     try {
         const data = req.body;
-        const clientes = req.body.clientes;
+        const clientesArray = Array.isArray(data.clientes) ? data.clientes : [data.clientes];
         
         const empresa = new Empresa({
-            empresa: data.empresa,
-            clientes: clientes
+            name: data.name,
+            impacto: data.impacto,
+            trayectoria: data.trayectoria,
+            categoria: data.categoria,
+            clientes: clientesArray
         });
-
-        console.log(clientes)
 
         await empresa.save();
 
-        console.log("hola")
-
         res.status(200).json({
             success: true,
-            empresa,
-            clientes
+            empresa
         })
     } catch (error) {
         res.status(500).json({
@@ -30,11 +28,11 @@ export const saveEmpresa = async(req, res) => {
     }
 }
 
-export const getEmpresa = async(req, res) => {
-    try {
-        const { limit = 10, desde = 0 } = req.query;
-        const query = { state: true };
+export const getEmpresa = async(req = request, res = response) => {
+    const { limit = 10, desde = 0 } = req.query;
+    const query = { state: true };
 
+    try {
         const [total, empresa] = await Promise.all([
             Empresa.countDocuments(query),
             Empresa.find(query)
@@ -50,5 +48,26 @@ export const getEmpresa = async(req, res) => {
         })
     } catch (error) {
         
+    }
+}
+
+export const updateEmpresas = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, ...data } = req.body;
+
+        const updateEmpresa = await Empresa.findByIdAndUpdate(id, data, {new: true});
+
+        res.status(200).json({
+            success: true,
+            msg: 'Empresa actualizada con exito',
+            empresa: updateEmpresa
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al actualizar la empresa",
+            error: error.message || error
+        })
     }
 }

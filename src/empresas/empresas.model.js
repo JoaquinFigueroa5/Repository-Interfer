@@ -21,7 +21,14 @@ const EmpresaSchema = Schema({
     categoria: {
         type: String,
         required: [true, 'La categoría es obligatoria']
+    },
+    state: {
+        type: Boolean,
+        default: true
     }
+},{
+    timeStamps: true,
+    versionKey: false
 });
 
 export default model('Empresa', EmpresaSchema)
