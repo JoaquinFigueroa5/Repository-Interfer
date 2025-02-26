@@ -22,12 +22,12 @@ export const exportToExcel = async (req, res) => {
         const worksheet = workbook.addWorksheet("Empresa");
 
         worksheet.columns = [
-            { header: "ID", key: "_id", width: 25 },
-            { header: "Nombre", key: "name", width: 30 },
-            { header: "Nivel de impacto", key: "impacto", width: 20 },
-            { header: "Trayectoria", key: "trayectoria", width: 15 },
+            { header: "ID", key: "_id", width: 30 },
+            { header: "Nombre", key: "name", width: 40 },
+            { header: "Nivel de impacto", key: "impacto", width: 10 },
+            { header: "Trayectoria", key: "trayectoria", width: 7 },
             { header: "Clientes", key: "clientes", width: 50 },
-            { header: "Categoria", key: "categoria", width: 15 },
+            { header: "Categoria", key: "categoria", width: 20 },
             { header: "Estado", key: "state", width: 15 },
         ];
 
