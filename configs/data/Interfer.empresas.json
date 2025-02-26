@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "67be9ec5ef685590dc9b7fe1"
+  },
+  "name": "Universidad Mariano Galvez de Guatemala",
+  "impacto": "ALTO",
+  "trayectoria": 10,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Alejandra Ojeda"
+  ],
+  "categoria": "Universidad",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67bea15fa71206a83215ad4d"
+  },
+  "name": "Intelaf",
+  "impacto": "MEDIO",
+  "trayectoria": 10,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Alejandra Ojeda"
+  ],
+  "categoria": "Tienda Informatica",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67bea18ca71206a83215ad50"
+  },
+  "name": "Profeco",
+  "impacto": "ALTO",
+  "trayectoria": 50,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Alejandra Ojeda"
+  ],
+  "categoria": "ONG",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67bea1c6a71206a83215ad53"
+  },
+  "name": "Unesco",
+  "impacto": "ALTO",
+  "trayectoria": 60,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Alejandra Ojeda"
+  ],
+  "categoria": "Institucion",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67bea228a71206a83215ad56"
+  },
+  "name": "Bufet de abogados Ojeda",
+  "impacto": "MEDIO",
+  "trayectoria": 2,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Cuco Quinonez"
+  ],
+  "categoria": "Leyes",
+  "state": true
+}]
