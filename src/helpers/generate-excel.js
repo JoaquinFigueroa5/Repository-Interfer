@@ -38,8 +38,14 @@ export const exportToExcel = async (req, res) => {
                 clientes
             });
         });
-        
-        const filePath = path.join(__dirname, "../reports/Empresas.xlsx");
+        const reportsDir = path.join(__dirname, "./reports")
+
+        if (!fs.existsSync(reportsDir)) {
+            fs.mkdirSync(reportsDir, { recursive: true });
+        }
+
+        const filePath = path.join(reportsDir, "Empresas.xlsx");
+
         await workbook.xlsx.writeFile(filePath);        
 
         res.download(filePath, "Empresas.xlsx", (err) => {
@@ -50,7 +56,6 @@ export const exportToExcel = async (req, res) => {
                     msg: "Error al generar el archivo" 
                 });
             }
-            fs.unlinkSync(filePath);
         });
 
     } catch (error) {
