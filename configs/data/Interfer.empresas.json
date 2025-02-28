@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "67be9ec5ef685590dc9b7fe1"
   },
-  "name": "Universidad Mariano Galvez de Guatemala",
+  "name": "UMG",
   "impacto": "ALTO",
   "trayectoria": 10,
   "clientes": [
@@ -66,5 +66,33 @@
     "Cuco Quinonez"
   ],
   "categoria": "Leyes",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67c0619b24a7078b6b6a33a9"
+  },
+  "name": "Nestle",
+  "impacto": "MEDIO",
+  "trayectoria": 30,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Cuco Quinonez"
+  ],
+  "categoria": "Distribuidora",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67c1adb6a7cf6af9db40f795"
+  },
+  "name": "HyperX",
+  "impacto": "MEDIO",
+  "trayectoria": 8,
+  "clientes": [
+    "Joaquin Figueroa",
+    "Saul de Leon"
+  ],
+  "categoria": "Distribuidora",
   "state": true
 }]

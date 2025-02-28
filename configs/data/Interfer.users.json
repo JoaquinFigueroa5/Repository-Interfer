@@ -1,13 +1,13 @@
 [{
   "_id": {
-    "$oid": "67be485042ea90018e07dfcd"
+    "$oid": "67c1aaaba7cf6af9db40f78f"
   },
   "name": "Joaquin",
   "surname": "Figueroa",
   "username": "Joaki",
   "email": "hfigueroa@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$dyXs2YVuLT/RNfOYFntprg$koulyYgoo+6JVlXIj7WCfOJ62BZ60R4iYotHN9g03w0",
-  "phone": "58771857",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$uHgeQKjXLLTTYbHZPF3+3Q$KdGu8pIWDfNp9LZJHcEo/YgnKvldxk40nhVvj28qaHc",
+  "phone": "58694127",
   "role": "ADMIN_ROLE",
   "state": true
 }]

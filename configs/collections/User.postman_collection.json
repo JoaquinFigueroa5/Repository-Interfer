@@ -10,7 +10,20 @@
 			"name": "getUsers",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		}

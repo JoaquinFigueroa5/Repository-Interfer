@@ -7,6 +7,114 @@
 	},
 	"item": [
 		{
+			"name": "getEmpresasA-Z",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas?ordenar=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas"
+					],
+					"query": [
+						{
+							"key": "ordenar",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmpresasZ-A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas?ordenar=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas"
+					],
+					"query": [
+						{
+							"key": "ordenar",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmpresasTRAYECTORIA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas?ordenar=trayectoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas"
+					],
+					"query": [
+						{
+							"key": "ordenar",
+							"value": "trayectoria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmpresasCATEGORIA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas?ordenar=categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas"
+					],
+					"query": [
+						{
+							"key": "ordenar",
+							"value": "categoria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "getEmpresas",
 			"request": {
 				"method": "GET",
@@ -34,13 +142,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlNDg1MDQyZWE5MDAxOGUwN2RmY2QiLCJpYXQiOjE3NDA1NDI2NzEsImV4cCI6MTc0MDU1MzQ3MX0.MI-DXWA9017tdmQjYvBWaypc24qUfN3ExiTppwMIe0E",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MxYWFhYmE3Y2Y2YWY5ZGI0MGY3OGYiLCJpYXQiOjE3NDA3NDUzOTgsImV4cCI6MTc0MDc1NjE5OH0.3diu-ePdJs1d4Wp8i7yPSsX2neia2_Pc8ic2kLunRLg",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"UMG\",\r\n    \"impacto\": \"ALTO\",\r\n    \"trayectoria\": 10,\r\n    \"categoria\": \"Universidad\"\r\n}",
+					"raw": "{\r\n    \"name\": \"HyperX\",\r\n    \"impacto\": \"MEDIO\",\r\n    \"trayectoria\": 17,\r\n    \"clientes\": [\"Joaquin Figueroa\", \"Saul de Leon\"],\r\n    \"categoria\": \"Distribuidora\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -67,16 +175,66 @@
 		{
 			"name": "updateEmpresa",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MxYWFhYmE3Y2Y2YWY5ZGI0MGY3OGYiLCJpYXQiOjE3NDA3NDUzOTgsImV4cCI6MTc0MDc1NjE5OH0.3diu-ePdJs1d4Wp8i7yPSsX2neia2_Pc8ic2kLunRLg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"trayectoria\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas/67c1adb6a7cf6af9db40f795",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas",
+						"67c1adb6a7cf6af9db40f795"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "descargar-Excel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:3010/interfer/v1/empresas/descargar-excel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"interfer",
+						"v1",
+						"empresas",
+						"descargar-excel"
+					]
+				}
 			},
 			"response": []
 		}
