@@ -7,11 +7,7 @@ export const login = async(req, res) => {
 
     try {
         
-        const user = await Usuario.findOne({
-            $or: [
-                {email}
-            ]
-        })
+        const user = await Usuario.findOne({ email })
 
         if(req.body.username){
             return res.status(400).json({
@@ -30,13 +26,15 @@ export const login = async(req, res) => {
                 msg: 'El usuario no existe en la base de datos'
             })
         }
-
+        console.log(user.password)
+        console.log(password)
         const validPassword = await verify(user.password, password);
         if(!validPassword){
             return res.status(400).json({
                 msg: 'La contraseña es incorrecta, bobo'
             })
         }
+        console.log("Hola")
 
         const token = await generarJWT(user.id);
 
@@ -45,7 +43,6 @@ export const login = async(req, res) => {
             userDetails: {
                 username: user.username,
                 token: token,
-                profilePicture: user.profilePicture
             }
         })
 

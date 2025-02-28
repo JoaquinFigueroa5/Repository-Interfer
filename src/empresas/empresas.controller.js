@@ -29,27 +29,36 @@ export const saveEmpresa = async(req, res) => {
 }
 
 export const getEmpresa = async(req = request, res = response) => {
-    const { limit = 10, desde = 0 } = req.query;
+    const { ordenar  } = req.query;
     const query = { state: true };
 
     try {
         const [total, empresa] = await Promise.all([
             Empresa.countDocuments(query),
             Empresa.find(query)
-                .skip(Number(desde))
-                .limit(Number(limit))
+                .sort(
+                    ordenar === "trayectoria" ? { trayectoria: 1 } : 
+                    ordenar === "asc" ? { name: 1 } :
+                    ordenar === "desc" ? { name: -1 } :
+                    ordenar === "categoria" ? { categoria: 1 } : 
+                    undefined)
         ]);
 
         return res.status(200).json({
             success: true,
-            msg: "Empresas obtenidas con exito",
+            msg: "Empresas obtenidas con éxito",
             total,
             empresa
-        })
+        });
     } catch (error) {
-        
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las empresas",
+            error: error.message || error
+        });
     }
-}
+};
+
 
 export const updateEmpresas = async(req, res) => {
     try {
